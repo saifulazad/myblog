@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% from "_captcha.html" import render_captchafield %}
+{% from "_selectabel_dropdown.html" import render_select_field %}
+{% from "__render_radio.html" import render_Radio_field %}
+{% block content %}
+
+
+
+
+    <body xmlns="http://www.w3.org/1999/html">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+			  <br>
+
+                <form method="post" action="{{ url_for('Register') }}" enctype="multipart/form-data">
+                    {{ form.csrf_token}}
+                    {{ render_field(form.Email) }}
+                    {{ render_field(form.Name) }}
+                    {{ render_field(form.User_Id) }}
+                    {{ render_select_field(schools) }}
+                    {{ render_field(form.Password) }}
+                    {{ render_field(form.Confirm) }}
+{#                     {{ form.gender }}#}
+                    {{render_Radio_field(form.gender) }}
+
+                    <div class="form-group">
+                    <p><input type=file name=file class="btn btn-info">
+
+                    </div>
+{#                     {{ render_captchafield(cap_img) }}#}
+{#					{% if error %}#}
+{##}
+{#						 <div class="alert alert-danger" role="alert"><li>{{ error }}</li></div>#}
+{##}
+{#					{% endif %}#}
+
+
+					<button type="submit"  value=Register class="btn pull-right">Submit</button>
+				</form>
+			</div>
+			<div class="col-md-4">
+
+
+            </div>
+		</div>
+
+
+
+	</body>
+
+{% endblock %}

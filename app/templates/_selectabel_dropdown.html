@@ -1,0 +1,9 @@
+{% macro render_select_field(object) %}
+    <div class="form-group">
+    <select name= {{ object.select_liertal }} class="form-control">
+        {% for obj in object.pair %}
+            <option value="{{ obj[0] }}">{{ obj[1] }}</option>
+        {% endfor %}
+    </select>
+    </div>
+{% endmacro %}

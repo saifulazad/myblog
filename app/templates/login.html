@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% from "successMsg.html" import successMsg %}
+{% block content %}
+
+  <body>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+                 {% if message %}
+                     {{  successMsg (message) }}
+                {% endif %}
+				<form method="post" action={{ url_for('login') }}>
+                    {{ form.csrf_token}}
+
+
+						{{ render_field(form.email) }}
+						{{ render_field(form.password) }}
+					
+
+                <div>
+					 <a class="pull-right" href="/reg">New User ?</a>
+                 </div>
+                <div>
+                    <br>
+
+					<button type="submit" class="btn pull-right">Submit</button>
+                </div>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</body>
+{% endblock %}
