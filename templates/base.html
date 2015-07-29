@@ -5,9 +5,11 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Bootstrap 3 Template</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link href="css/tanvir.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
@@ -61,13 +63,13 @@
       <ul class="nav navbar-nav navbar-right">
           <li><a href="/profile">Profile</a> </li>
 {#          <li><a href="/login">Login</a></li>#}
-          <li><a href="/upload">{{user}}</a></li>
+          <li  ><a class="glyphicon glyphicon-user" aria-hidden="true" href="/upload"> {{user}}</a></li>
 
 {#        <li class="dropdown">#}
 {#          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>#}
 {#          <ul class="dropdown-menu" role="menu">#}
 {#            <li><a href="#">Action</a></li>#}
-{#            <li><a href="#">Another action</a></li>#}
+{#            <li  ><a href="#">Another action</a></li>#}
 {#            <li><a href="#">Something else here</a></li>#}
 {#            <li class="divider"></li>#}
 {#            <li><a href="#">Separated link</a></li>#}
@@ -75,18 +77,22 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
+</nav>
+ 
   </div><!-- /.container-fluid -->
 
 
-</nav>
+
 <!-- !-->
 		<!-- !-->
-  <div id="footer" class="container">
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="navbar-inner navbar-content-center">
-            <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
-        </div>
-    </nav>
-</div>
+  <footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+    <p>Designed and built with all the love in the world by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+    <p>Code licensed under <a rel="license" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>  
+  </div>
+</footer>
+   
+
 
 </html>
