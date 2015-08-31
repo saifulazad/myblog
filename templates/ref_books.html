@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% set title = 'Python Reference Books' %}
+
+{% block content %}
+
+
+    <div class="col-md-3">
+
+
+        <div class="list-group">
+        {% for chapterName , URL in chapters %}
+
+          <a href={{ URL }} class="list-group-item">{{ chapterName }}</a>
+        {% endfor %}
+        </div>
+    </div>
+<div class="col-md-9">
+  <div class="col-md-3">
+    <a href="http://www.amazon.com/Learning-Python-Edition-Mark-Lutz/dp/1449355730" class="thumbnail">
+      <img src="{{ url_for('static', filename='learing_py.jpeg') }}" alt="..." height="171" width="180">
+    </a>
+  </div>
+    <div class="col-md-9">
+<div class="media-body">
+            <h4 class="media-heading">Learing Python by Orelly</h4>
+            This is a very nice
+            </div>
+    </div>
+</div>
+
+   {% for n in books %}
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+        <div class="col-md-3">
+            <a href= {{ n['AmazonURL'] }} class="thumbnail">
+        <img src="{{ url_for('static', filename='dive_into_python.jpg') }}" alt="..." height="171" width="180">
+        </a>
+        </div>
+        <div class="col-md-9">
+        <div class="media-body">
+            <h4 class="media-heading">{{ n['Name'] }}</h4>
+            {{ n['Descriptions'] }}
+        </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+{#
+
+     <div class="col-md-3">
+
+    </div>
+<div class="col-md-9">
+  <div class="col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="{{ url_for('static', filename='learing_py.jpeg') }}" alt="..." height="171" width="180">
+    </a>
+  </div>
+    <div class="col-md-9">
+<div class="media-body">
+            <h4 class="media-heading">Nested media heading</h4>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+    </div>
+</div>
+#}
+
+
+
+
+
+
+    </div>
+    </div>
+
+{% endblock %}
