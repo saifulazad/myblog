@@ -11,9 +11,9 @@
 
 
         <div class="list-group">
-        {% for chapterName , URL in chapters %}
+        {% for chapterName , URL , is_active in chapters %}
 
-          <a href={{ URL }} class="list-group-item">{{ chapterName }}</a>
+          <a href="{{ URL }}" class="list-group-item {{ is_active }}">{{ chapterName }}</a>
          {# <a href="#" class="list-group-item">Installations</a>
           <a href="#" class="list-group-item">Hello World</a>
           <a href="#" class="list-group-item">Flow control</a>#}
@@ -53,21 +53,6 @@
     </table>
     </div>
      <div class="col-md-3">
-   {# <div class="form-group">
-        <input type="checkbox" aria-label="Checkbox for following text input" name= {{  categories.select_liertal }} value={{ category[0] }}>
 
-        {{ category[1] }}
-    </div>#}
-
-
-        <div class="list-group">
-        {% for chapterName , URL in chapters %}
-
-          <a href={{ URL }} class="list-group-item">{{ chapterName }}</a>
-         {# <a href="#" class="list-group-item">Installations</a>
-          <a href="#" class="list-group-item">Hello World</a>
-          <a href="#" class="list-group-item">Flow control</a>#}
-         {% endfor %}
-        </div>
     </div>
 {% endblock %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% set title = 'Python Reference Books' %}
+
+{% block content %}
+
+<div  class="col-md-3 " >
+
+
+<div class="list-group">
+{% for chapterName , URL ,is_active in chapters %}
+
+  <a href="{{ URL }}" class="list-group-item {{ is_active }}">{{ chapterName }}</a>
+{% endfor %}
+</div>
+</div>
+    <div class="col-md-9">
+<h3>List and List Comprehantions</h3>
+
+<p>List is very inportent datatype in all programming language. If you are a C++ coader you may be familiar in Vector. If you are in java then Arraylist ot List.
+
+<p>
+    In python we will delear a list as
+        </p>
+<pre class=prettyprint>
+    mylist = []
+</pre>
+<p>
+This is an empty list.
+    </p>
+        <p>We can define a list including many elements.
+    </p>
+<pre class=prettyprint>
+    songs_list = ['folksong' , 'banglasong' , 'englishsong']
+
+</pre>
+</p>
+    <p>
+
+        We can now delete the last element form songs_list List by this
+    </p>
+    <code>
+    songs_list.pop()
+
+</code>
+      <p>
+
+        We can now delete the last element form songs_list List by its index
+    </p>
+    <code>
+    songs_list.pop(1)
+
+</code>
+    <p>
+        This will delete the 2nd element form   songs_list . So it delete 'banglasong' from the list
+
+    </p>
+
+    <p>
+
+    Now this is most powerful things you can do by using list comprehantion
+    </p>
+    <pre class=prettyprint>
+
+     num_list = [ 3 , 7 , 7 , 6, 1]
+     [ number* number for  number in num_list ]
+    </pre>
+        <p>
+
+   The output of this code is
+    </p>
+    <pre class=prettyprint>
+     [9, 49, 49, 36, 1]
+    </pre>
+      <p>
+
+    Now Explanation about this code <code>number* number</code> this makes square of a number <code>
+
+          for  number in num_list
+      </code> This will makes squres for all number in the <code>num_list</code>
+    </p>
+
+
+     <p>
+
+    Now this is most powerful things you can do by using list comprehantion
+    </p>
+    <pre class=prettyprint>
+
+     num_list = [ 3 , 7 , 7 , 6, 1]
+     [ number* number for  number in num_list if number >3]
+    </pre>
+        <p>
+
+   The output of this code is
+    </p>
+        <pre class=prettyprint> [49, 49, 36]</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-offset-3">
+    <button class="btn btn-default btn-lg dropdown-toggle" onClick="location.href='http://anothersitehere.com/file.pdf'" type="button"  aria-haspopup="true" aria-expanded="false">
+    Please Judge yourself about this lesson </span>
+
+  </button>
+    </div>
+         </div>
+
+{% endblock %}

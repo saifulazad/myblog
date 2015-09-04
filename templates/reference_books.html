@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% set title = 'Python Reference Books' %}
+
+{% block content %}
+
+
+
+
+   {% for n in books %}
+
+       {% if   loop.index !=1 %}
+
+        <div class="col-md-3">
+
+        </div>
+      {% else %}
+       <div class="col-md-3">
+
+
+        <div class="list-group">
+        {% for chapterName , URL ,is_active in chapters %}
+
+          <a href="{{ URL }}" class="list-group-item {{ is_active }}">{{ chapterName }}</a>
+        {% endfor %}
+        </div>
+    </div>
+       {% endif %}
+    <div class="col-md-9">
+        <div class="col-md-3">
+            <a href= {{ n['AmazonURL'] }} class="thumbnail">
+        <img src="{{ url_for('static', filename ='') }}{{n['imgURL']}}" alt="..." height="171" width="180">
+        </a>
+        </div>
+        <div class="col-md-9">
+        <div class="media-body">
+            <h4 class="media-heading">{{ n['Name'] }}</h4>
+
+            {{ n['Descriptions'] }}
+        </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+    </div>
+    </div>
+
+{% endblock %}
