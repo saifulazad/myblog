@@ -7,7 +7,7 @@ python_chapter = ['Introduction' , 'Installations', 'Input and Output' ,
 
                   'Flow Control', 'Loop or Iteration' , 'Basic Data Types',
 
-                  'List and List Comprehantions' , 'Reference Books', "FAQ'S"
+                  'List and List Comprehensions' , 'Reference Books', "FAQ'S"
 
 
                   ]
@@ -15,6 +15,7 @@ python_chapter = ['Introduction' , 'Installations', 'Input and Output' ,
 tepmlates =   ['_'.join(x.lower().split())+'.html' for x in python_chapter ]
 print tepmlates
 url = range(len(python_chapter))
+url = [ '/python/'+ str(x) for x in url]
 
 value_pair = zip(python_chapter,url)
 
@@ -50,7 +51,12 @@ question_6 = [
 
 ]
 
+chapter_details ={
 
+    'Writter': 'Saiful Azad',
+    'Time': 'None'
+
+}
 
 books = [
 
@@ -95,7 +101,7 @@ def ref_books():
 
     return render_template('reference_books.html', books = books ,chapters = value_pair)
 
-@app.route('/<id>')
+@app.route('/python/<id>')
 def render_pages(id):
 
     id = int(id)
@@ -104,20 +110,22 @@ def render_pages(id):
 
     is_active[id] = 'active'
 
-    if id ==0:
-        print id
-
-        return render_template('introduction.html')
-
-    if id ==6:
-        print id
-        return render_template('list_and_list_comprehantions.html',chapters = zip(python_chapter,url,is_active))
-
-
-    if id ==7:
-        print id
-        return render_template('reference_books.html', books = books ,chapters = zip(python_chapter,url, is_active))
+    # if id ==0:
+    #     print id
+    #
+    #     return render_template('introduction.html')
+    #
+    # if id ==6:
+    #     print id
+    #
+    #     return render_template('list_and_list_comprehensions.html',chapters = zip(python_chapter,url,is_active), chapter_details = chapter_details)
+    #
+    #
+    # if id ==7:
+    #     print id
+    chapter_details['Heading'] = python_chapter[id]
+    return render_template(tepmlates[id],chapters = zip(python_chapter,url, is_active),chapter_details = chapter_details)
 
 
     return render_template('topic.html', chapters = zip(python_chapter,url, is_active))
-#app.run(debug =True)
+app.run(debug =True)

@@ -1,0 +1,35 @@
+{% macro render_modal(URL) %}
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Important Notes</h4>
+        </div>
+        <div class="modal-body">
+            <ul>
+
+                <li>
+                    {#Read The question Carefully#}
+                    প্রশ্নগুলো ভাল ভাবে
+                </li>
+                <li>
+                    Some Questions May have Multiple Answer
+                </li>
+                <li>
+
+                    You Have to get at-least 8 marks to get pass
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success">পরীক্ষা</button>
+            {#<button type="button" class="btn btn-success">Go to Exam Room</button>#}
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} {{chapter_details.Heading}} {% endblock %}
+{% from  "_side_bar_list.html" import render_side_bar_list%}
+{% from  "_post_details.html" import render_post_details%}
+{% from  "_modal.html" import render_modal%}
+{% block content %}
+
+    {{ render_side_bar_list(chapters) }}
+    <div class="col-md-9">
+        {{ render_post_details(chapter_details) }}
+        <div class="col-md-12">
+            {% block article %}{% endblock article %}
+        </div>
+        <div class="col-md-12">
+            <div class="alert alert-info " role="alert">
+
+                <a  class="alert-link col-md-offset-9">
+                    {#<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Lets Have a Try with Quize</button>#}
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                        যাচাই করি </button>
+
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+{{ render_modal('Aad')}}
+
+
+
+
+
+
+{% endblock %}

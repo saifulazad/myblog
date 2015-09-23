@@ -1,12 +1,15 @@
 {% extends "base.html" %}
-{% set title = 'Python Reference Books' %}
-
+{% block title %} {{ chapters[7][0] }} {% endblock %}
+{% from  "_side_bar_list.html" import render_side_bar_list%}
+{% from  "_post_details.html" import render_post_details%}
 {% block content %}
 
 
+{{ render_side_bar_list(chapters) }}
+    <div class="col-md-9">
+</div>
 
-
-   {% for n in books %}
+{#   {% for n in books %}
 
        {% if   loop.index !=1 %}
 
@@ -14,16 +17,7 @@
 
         </div>
       {% else %}
-       <div class="col-md-3">
-
-
-        <div class="list-group">
-        {% for chapterName , URL ,is_active in chapters %}
-
-          <a href="{{ URL }}" class="list-group-item {{ is_active }}">{{ chapterName }}</a>
-        {% endfor %}
-        </div>
-    </div>
+            {{ render_side_bar_list(chapters) }}
        {% endif %}
     <div class="col-md-9">
         <div class="col-md-3">
@@ -43,6 +37,6 @@
 {% endfor %}
 
     </div>
-    </div>
+    </div>#}
 
 {% endblock %}

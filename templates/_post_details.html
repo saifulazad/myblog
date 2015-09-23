@@ -1,0 +1,12 @@
+{% macro render_post_details(post_details) %}
+<div class="col-md-12">
+    <div class="col-md-9">
+
+        <div class="page-header">
+            <h2>{{ post_details.Heading }}<br><small> by {{ post_details.Writter }}</small></h2>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
+            <button type="button" class="btn btn-success" style="background-color: #3a5795;border-color: #3a5795;">Share This Article on Facebook</button>
+        </div>
+    </div>
+</div>
+{% endmacro %}

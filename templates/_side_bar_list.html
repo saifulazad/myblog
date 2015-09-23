@@ -1,0 +1,12 @@
+{% macro render_side_bar_list(object) %}
+  <div  class="col-md-3 " id = "no_pading_list">
+
+
+<div class="list-group">
+{% for chapterName , URL ,is_active in object %}
+
+  <a href="{{ URL }}" class="list-group-item {{ is_active }}">{{ chapterName }}</a>
+{% endfor %}
+</div>
+</div>
+{% endmacro %}
