@@ -78,6 +78,13 @@ books = [
         }
 
     ]
+
+@app.route('/about_us')
+def About_us():
+    return render_template('about_us.html', user='Azad')
+
+
+
 @app.route('/')
 def hello_world():
     return render_template('home.html', user='Azad')
@@ -128,4 +135,4 @@ def render_pages(id):
 
 
     return render_template('topic.html', chapters = zip(python_chapter,url, is_active))
-app.run(debug =True)
+#app.run(debug =True)

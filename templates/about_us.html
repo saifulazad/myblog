@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="col-md-offset-2 col-md-8">
+
+        <div class="col-md-12">
+        <h2 class="pull-right text-muted">  About US</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                  <img src="{{ url_for('static', filename='dive_into_python.jpg') }}" alt="...">
+
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-9">
+
+               <h2>Saiful Azad <small>Software Engineer</small></h2>
+                <p class="text-muted text-justify">Hello I am Saiful. I have developed many web applications <a href="http://www.w3schools.com">My Linkin Profile</a> and have contribution in various
+                open source projects <a href="http://www.w3schools.com">My GitHub Account</a>. I like to play video games , ancoring atc .
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

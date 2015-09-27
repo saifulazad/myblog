@@ -14,7 +14,6 @@
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
 
         <style>
@@ -59,19 +58,25 @@
                 </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                           <ul class="nav navbar-nav">
-                            <li class="active"><a href="/python">Python <span class="sr-only"></span></a></li>
+                            <li  id="python" ><a href="/python">Python <span class="sr-only"></span></a></li>
+
+
                             {#<li><a href="#">AVR</a></li>#}
                           </ul>
 
-                        {#  <ul class="nav navbar-nav navbar-right">
-                              <li><a href="#">Profile</a> </li>
-                              <li><a href="#">Login</a></li>
-                              </li>
-                          </ul>#}
+                          <ul class="nav navbar-nav navbar-right">
+                              <li id="portfolio"><a href="/Portfolio">Portfolio</a></li>
+
+                              <li id="about_us"><a href="/about_us">About US</a> </li>
+
+                          </ul>
                     </div>
                 </div>
             </nav>
             {% block content %}{% endblock content %}
         </div>
     </body>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='custom.js') }}"></script>
+
 </html>
